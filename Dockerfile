@@ -38,3 +38,9 @@ RUN cd /emsdk \
 RUN apt-get clean && apt-get autoclean && apt-get autoremove
 
 # . /emsdk/emsdk_env.sh
+RUN echo "\
+\n# set EMSDK environment variables\
+\nif [ -f /emsdk/emsdk_env.sh ]; then\
+\n  . /emsdk/emsdk_env.sh > /dev/null\
+\nfi\
+\n" >> /root/.bashrc
