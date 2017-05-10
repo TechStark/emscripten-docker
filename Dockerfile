@@ -37,10 +37,7 @@ RUN cd /emsdk \
 # clean packages
 RUN apt-get clean && apt-get autoclean && apt-get autoremove
 
-# . /emsdk/emsdk_env.sh
-RUN echo "\
-\n# set EMSDK environment variables\
-\nif [ -f /emsdk/emsdk_env.sh ]; then\
-\n  . /emsdk/emsdk_env.sh > /dev/null\
-\nfi\
-\n" >> /root/.bashrc
+# entrypoint
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
