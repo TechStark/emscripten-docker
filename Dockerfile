@@ -35,9 +35,15 @@ RUN cd /emsdk \
     && ./emsdk activate ${EMSDK_NAME}
 
 # clean packages
-RUN apt-get clean && apt-get autoclean && apt-get autoremove
+RUN apt-get clean\
+    && apt-get autoclean\
+    && apt-get autoremove\
+    && rm -rf /var/lib/apt/lists/*
 
 # entrypoint
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+
+# default COMMAND
+CMD ["/bin/bash"]
