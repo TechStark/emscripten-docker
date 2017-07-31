@@ -15,7 +15,7 @@
 - curl
 
 ## Versioning
-The Docker image tag is the same as Emscripten SDK version, e.g. `ttt43ttt/emscripten:1.37.9` contains Emscripten `1.37.9`, `ttt43ttt/emscripten:1.37` contains the latest patch version of Emscripten `1.37`.
+The Docker image tag is the same as Emscripten SDK version, e.g. `ttt43ttt/emscripten:1.37.16` contains Emscripten `1.37.16`, `ttt43ttt/emscripten:1.37` contains the latest patch version of Emscripten `1.37`.
 
 ## Development
 ### How to build Docker image from Dockerfile?
